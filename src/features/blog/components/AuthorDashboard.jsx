@@ -105,7 +105,7 @@ export default function AuthorDashboard({ theme, onSessionExpired }) {
 
       <PostStats stats={stats} />
 
-      <section aria-label="Daftar artikel saya" className="mt-8 min-h-[20rem]">
+      <section aria-label="Daftar artikel saya" className="mt-8 min-h-screen">
         {loading && <p role="status">Memuat artikel…</p>}
         {!loading && error && (
           <p role="alert" className="rounded-lg bg-red-100 p-4 text-red-900">

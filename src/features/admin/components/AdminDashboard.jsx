@@ -68,6 +68,7 @@ export default function AdminDashboard({ onSessionExpired }) {
         ))}
       </section>
 
+      <div className="min-h-screen">
       {loading && (
         <p role="status" className="mt-6">
           Memuat data…
@@ -168,6 +169,7 @@ export default function AdminDashboard({ onSessionExpired }) {
           </section>
         </>
       )}
+      </div>
     </div>
   )
 }
