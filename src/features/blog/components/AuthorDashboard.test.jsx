@@ -141,7 +141,7 @@ describe('AuthorDashboard', () => {
     expect(screen.getByText('draft:kosong')).toBeInTheDocument()
     await userEvent.click(screen.getByRole('button', { name: 'simpan-post' }))
     expect(screen.queryByTestId('post-modal')).not.toBeInTheDocument()
-    expect(Swal.fire).toHaveBeenCalledWith(expect.objectContaining({ icon: 'success' }))
+    await waitFor(() => expect(Swal.fire).toHaveBeenCalledWith(expect.objectContaining({ icon: 'success' })))
     await waitFor(() => expect(fetchMyPosts).toHaveBeenCalledTimes(2))
   })
 

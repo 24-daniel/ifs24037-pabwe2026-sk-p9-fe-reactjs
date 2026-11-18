@@ -75,7 +75,7 @@ describe('AuthPage (register)', () => {
     await userEvent.click(screen.getByRole('button', { name: 'Daftar' }))
     expect(register).toHaveBeenCalledWith({ username: 'budi', email: 'budi@mail.test', password: 'rahasia' })
     await waitFor(() => expect(window.location.pathname).toBe('/login'))
-    expect(Swal.fire).toHaveBeenCalledWith(expect.objectContaining({ icon: 'success' }))
+    await waitFor(() => expect(Swal.fire).toHaveBeenCalledWith(expect.objectContaining({ icon: 'success' })))
   })
 
   it('menampilkan error dari server', async () => {

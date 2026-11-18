@@ -2,13 +2,13 @@ import Swal from 'sweetalert2'
 import { confirmDelete, formatDate, showError, showSuccess } from './toolsHelper'
 
 describe('toolsHelper', () => {
-  it('showSuccess menampilkan dialog sukses', () => {
-    showSuccess('Tersimpan')
+  it('showSuccess menampilkan dialog sukses', async () => {
+    await showSuccess('Tersimpan')
     expect(Swal.fire).toHaveBeenCalledWith(expect.objectContaining({ icon: 'success', text: 'Tersimpan' }))
   })
 
-  it('showError menampilkan dialog gagal', () => {
-    showError('Oops')
+  it('showError menampilkan dialog gagal', async () => {
+    await showError('Oops')
     expect(Swal.fire).toHaveBeenCalledWith(expect.objectContaining({ icon: 'error', text: 'Oops' }))
   })
 
